@@ -16,7 +16,7 @@ a = (
   "C"
   )
 #multiple-choice options 
-m = (
+c = (
   ("A) Shadow", "B) Roach", "C) Shadowfax", "D) Dapple"),
   ("A) Mercy", "B) Reaper", "C) Tracer", "D) Genji"),
   ("A) Zelda","B) Peach", "C) Midna", "D) Tetra"),
@@ -25,11 +25,35 @@ m = (
 )
 # reponds 
 r = []
+s = 0
+f = []
+t = []
 #Game loop
-for choice in range(5):
-    print(q[choice])
-    print(m[choice])
-    
-    repond= input("Enter your reponde : ")
-    r.append(repond)
-print(r)   
+for i in range(len(q)):
+  print("--------------------------------------")
+  print(f"Question {i+1} : {q[i]}")
+  for j in range(len(c[i])):
+    print(c[i][j])
+  valeu = input("your answer: ")
+  valeu.upper()
+  r.append(valeu)
+for i in range(len(r)):
+  if r[i] == a[i]:
+    s += 1
+    t.append(r[i])
+  else:
+    f.append(r[i])
+s = ( s / 5 ) * 100
+print(f"Your score: {s}")
+print("-------------------The end-------------------")
+for i in range(len(r)):
+  print(f"The correct answer is : {a[i]}")
+  print(f"Your answer: {r[i]}")
+
+
+for i in range(len(t)):
+    print(f"Your answer is correct: {t[i]}")
+for i in range(len(f)):
+    print(f"The False answer is : {f[i]}")
+  
+ 
