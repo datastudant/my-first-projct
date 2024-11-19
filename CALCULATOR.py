@@ -1,63 +1,44 @@
 #PYTHON 
 status = True  # Initialize status variable
 
-try:
-    num1 = float(input("Enter the 1st number: "))
-    num2 = float(input("Enter the 2nd number: "))
-except ValueError:  # Catch specific exception
-    status = False
-    print("Invalid input! Please enter numeric values.")
-   
+def get_float_input(prompt):
+    while True:
+        try:
+            return float(input(prompt))
+        except ValueError:
+            print("Invalid input! Please enter a numeric value.")
+
+num1 = get_float_input("Enter the 1st number: ")
+num2 = get_float_input("Enter the 2nd number: ")
+
 #function for check operator 
-#print(num1, num2)
-
-
 def check_operator():
-  op = input("Enter operator (+, -, *, /) : ")
-  while op not in ('+', '-', '*', '/'):
-       if op not in ('+', '-', '*', '/') and len(op) == 1:
-          op = input("Error: pleass Enter coreact operator (+, -, *, /) : ")
-       else:
-          op = input("Error: pleass Enter one operator (+, -, *, /) : ")
-  return op
+    op = input("Enter operator (+, -, *, /) : ")
+    while op not in ('+', '-', '*', '/'):
+        if op not in ('+', '-', '*', '/') and len(op) == 1:
+            op = input("Error: please enter correct operator (+, -, *, /) : ")
+        else:
+            op = input("Error: please enter one operator (+, -, *, /) : ")
+    return op
+
 #check operator
 op_status = check_operator()
+
 #program calculator
-
 def calculator(num1, num2, op_status):
-   if op_status == '+':
-      ruselt = num1 + num2
-      print(ruselt)
-   elif op_status == '-':
-      ruselt = num1 - num2
-      print(ruselt)
-   elif op_status == '/' :
-      ruselt = num1 / num2
-      print(ruselt)
-   else:
-      ruselt = num1 * num2
-      print(ruselt)
+    if op_status == '+':
+        result = num1 + num2
+        print(result)
+    elif op_status == '-':
+        result = num1 - num2
+        print(result)
+    elif op_status == '/':
+        result = num1 / num2
+        print(result)
+    else:
+        result = num1 * num2
+        print(result)
+
 while status:
-   check_operator()
-   calculator(num1, num2, op_status)
-   break  
-      
-     
- 
-   
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
+    calculator(num1, num2, op_status)
+    break

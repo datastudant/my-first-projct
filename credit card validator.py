@@ -6,7 +6,6 @@ card_number = input("enter a credit card : ")
 crad_number = card_number.replace(" ","")
 crad_number = crad_number.replace("-","")
 crad_number = crad_number[::-1]
-print(crad_number)
 # STEP 2
 for x in crad_number[::2]:
   sum_odd_digits += int(x)
