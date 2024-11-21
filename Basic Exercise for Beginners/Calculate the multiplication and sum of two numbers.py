@@ -1,33 +1,23 @@
 #Exercise 1: Calculate the multiplication and sum of two numbers
 #Given two integer numbers, write a Python code to return their product only if the product is equal to or lower than 1000. Otherwise, return their sum.
-
-
-def main():
-    number1 = input("Enter the first number: ")
-    number2 = input("Enter the second number: ")
-    number1, number2 = check_number_isdigit(number1, number2)
-    print(type(number2, number1))
-    def check_number_isdigit(number1, number2):
-         try:
-             number1 = int(number1)
-             number2 = int(number2)
-             return number1, number2
-         except ValueError:
-             print("Invalid input. Please enter a valid integer.")
-             return None, None
-            
-          
-    check_number_isdigit(number2, number1)
-    def check_multiplication_number(number1, number2):
-        product = number1 * number2 
-        if product <= 1000 :
-            return product
+number_1 = input("Enter the first number: ")
+number_2 = input("Enter the second number: ")
+while True :
+    if number_1.isdigit() and number_2.isdigit():
+        number_1 = int(number_1)
+        number_2 = int(number_2)
+        if number_1 * number_2 <= 1000:
+            print(f"multiplication : {number_1 * number_2}") 
+            break
         else :
-            return number2 + number1
-    resulet = check_multiplication_number(number1, number2)
-    print(f"the result is {resulet}")
-        
-   
+            print(f"some: {number_1 + number_2}")
+            break
+    else:
+        print("Invalid input. Please enter a valid integer number.")
+        number_1 = input("Enter the first number: ")
+        number_2 = input("Enter the second number: ")
+
+
     
         
 
@@ -36,10 +26,6 @@ def main():
 
 
 
-if __name__ == "__main__":
-    main()
-    
-    
     
   
     
