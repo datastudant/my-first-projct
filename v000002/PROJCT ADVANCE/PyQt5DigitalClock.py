@@ -18,10 +18,12 @@ class DigitalClock(QWidget):
         # Create and configure the time label
         self.time_label = QLabel(self)
         self.time_label.setAlignment(Qt.AlignCenter)
+        
         self.time_label.setStyleSheet("font-size: 150px; color: #26ff00;")
         font_id = QFontDatabase.addApplicationFont("v000002/PROJCT ADVANCE/DS-DIGIT.TTF")
         font_family = QFontDatabase.applicationFontFamilies(font_id)[0]
         my_font = QFont(font_family, 150)
+
         self.time_label.setFont(my_font)
 
         # Set up the layout
