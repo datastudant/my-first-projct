@@ -66,7 +66,7 @@ players_speed = 20
 def p1_move_up():
     player1.sety(player1.ycor() + players_speed)
 
-
+2
 def p1_move_down():
     player1.sety(player1.ycor() - players_speed)
 
